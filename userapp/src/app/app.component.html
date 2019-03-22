@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-4">
+         <app-add-user
+            (userOutput)="userAdded($event)"
+         >
+        </app-add-user>
+      </div>
+      <div class="col-md-8">
+        <app-users
+          [users]="users$ | async"
+          (deleEvtOut)="userDeleted($event)"
+          (editEvtOut)="userEdit($event)"
+        >
+        </app-users>
+     </div>
+  </div>
+</div>
+<!-- Modal -->
+<div bsModal #editModal="bs-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <app-edit-modal
+      (editModalOut)="closeModal($event)"
+      (userOut)="onEditUser($event)"
+      [user]="userForEdit"
+    >
+    </app-edit-modal>
+  </div>
+</div>
+<app-footer></app-footer>

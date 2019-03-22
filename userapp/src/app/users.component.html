@@ -1,0 +1,29 @@
+<h2>Customers</h2>
+<p>You can delete or edit customer. If you delete it, it will be deleted from the system</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Time</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.checkInTime | date:'medium'}}</td>
+        <td><button type="button" (click)="editUser(user)" class="btnwdth btn btn-primary">
+                Edit
+            </button>
+        </td>
+        <td><button type="button" (click)="deleteUser(user)" class="btnwdth btn btn-danger">
+                Check-Out
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>

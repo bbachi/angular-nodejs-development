@@ -1,0 +1,11 @@
+.header{
+   background-color: red;
+   color: #ffffff;
+   font-size: 17px;
+   text-align: center;
+   padding: 3%; 
+}
+
+.btnwdth {
+   width: 200px;
+}
